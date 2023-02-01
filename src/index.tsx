@@ -1,24 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-const Title = () => {
-    return <h1>Hello App.js</h1>
+interface ITitleProps {
+    text: string
+}
+
+const Title = (props: ITitleProps) => {
+    console.log(props)
+    return <h1>Hello {props.text}</h1>
 }
 
 const Content = () => {
     return (
         <React.Fragment>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam dicta repellendus, fugiat, sapiente perspiciatis
-                corrupti consequatur saepe ratione omnis culpa officiis sit quos
-                ducimus neque debitis voluptates recusandae modi facere.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+                laboriosam voluptatem reprehenderit dolorum ad totam architecto.
+                Voluptatibus, nihil totam quibusdam illo vero, quae debitis sed
+                laboriosam, fugiat dolorum error quisquam!
             </p>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam dicta repellendus, fugiat, sapiente perspiciatis
-                corrupti consequatur saepe ratione omnis culpa officiis sit quos
-                ducimus neque debitis voluptates recusandae modi facere.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
+                voluptates eum a culpa? Molestias amet voluptas quaerat sed vel
+                minus, dolor delectus aperiam ea quo voluptate, repellat error
+                similique qui!
             </p>
         </React.Fragment>
     )
@@ -27,7 +32,8 @@ const Content = () => {
 function App() {
     return (
         <>
-            <Title />
+            <Title text="React" />
+            <Title text="TS" />
             <Content />
         </>
     )
