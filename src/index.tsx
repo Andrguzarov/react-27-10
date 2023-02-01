@@ -5,26 +5,23 @@ interface ITitleProps {
     text: string
 }
 
+type ContentProps = {
+    text1: string
+    text2: string
+    year: number
+}
+
 const Title = (props: ITitleProps) => {
     console.log(props)
     return <h1>Hello {props.text}</h1>
 }
 
-const Content = () => {
+const Content = (props: ContentProps) => {
     return (
         <React.Fragment>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-                laboriosam voluptatem reprehenderit dolorum ad totam architecto.
-                Voluptatibus, nihil totam quibusdam illo vero, quae debitis sed
-                laboriosam, fugiat dolorum error quisquam!
-            </p>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
-                voluptates eum a culpa? Molestias amet voluptas quaerat sed vel
-                minus, dolor delectus aperiam ea quo voluptate, repellat error
-                similique qui!
-            </p>
+            <p>{props.text1}</p>
+            <p>{props.text2}</p>
+            <div>Year: {props.year}</div>
         </React.Fragment>
     )
 }
@@ -34,7 +31,7 @@ function App() {
         <>
             <Title text="React" />
             <Title text="TS" />
-            <Content />
+            <Content text1="Hello world 1" text2="Hello world 2" year={2023} />
         </>
     )
 }
